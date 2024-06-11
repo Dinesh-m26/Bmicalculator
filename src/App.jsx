@@ -26,7 +26,7 @@ export default function App() {
         setStatus("Over Weight")
       } else {
         setStatus("Obese")
-      }
+      }setWarning("")
     } else {
       setBmi(null)
       setStatus("")
@@ -51,9 +51,10 @@ export default function App() {
             <div className="w-1/2">
               <img src={Icon} className="hidden md:block h-[350px] w-full" alt="" />
             </div>
-            <div className="">
+            <div >
               <strong className="text-xl">BMI CALCULATOR</strong>
-              <p className='text-[#cf3a3a]'>{warning}</p>
+              {warning &&  <p className='text-[#cf3a3a]'>{warning}</p>}
+             
               <div className="text-lg">
                 <label className="flex flex-col mt-2 " htmlFor="height">
                   Height (cm)
